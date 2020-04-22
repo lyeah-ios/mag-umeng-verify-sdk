@@ -1,0 +1,27 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - MAGUMVerify (1.2.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - MAGUMVerify (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - FBSnapshotTestCase
+
+EXTERNAL SOURCES:
+  MAGUMVerify:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  MAGUMVerify: b928425c3ad609357161257d8362797e23da2daa
+
+PODFILE CHECKSUM: 5c77e265857b32789502b8eaae6a253da031072b
+
+COCOAPODS: 1.9.1

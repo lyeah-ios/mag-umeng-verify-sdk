@@ -1,0 +1,32 @@
+{
+  "name": "MAGUMVerify",
+  "version": "1.2.0",
+  "summary": "umeng-uverify-sdk.",
+  "homepage": "https://github.com/lyeah-ios/mag-umeng-verify-sdk.git",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "zisu": "zisulwl@163.com"
+  },
+  "source": {
+    "git": "https://github.com/lyeah-ios/mag-umeng-verify-sdk.git",
+    "tag": "1.2.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "resources": "MAGUMVerify/*.bundle",
+  "ios": {
+    "vendored_frameworks": "MAGUMVerify/UMVerify.framework"
+  },
+  "frameworks": [
+    "SystemConfiguration",
+    "CoreTelephony"
+  ],
+  "libraries": [
+    "sqlite3",
+    "z"
+  ]
+}
