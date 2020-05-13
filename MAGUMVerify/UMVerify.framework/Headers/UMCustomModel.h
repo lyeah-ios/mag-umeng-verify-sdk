@@ -2,8 +2,7 @@
 //  UMCustomModel.h
 //  UMVerify
 //
-//  Created by wangkai on 2019/10/12.
-//  Copyright © 2019 wangkai. All rights reserved.
+//  Copyright © 2019 umeng. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -42,7 +41,7 @@ typedef CGRect(^PNSBuildFrameBlock)(CGSize screenSize, CGSize superViewSize, CGR
 @property (nonatomic, copy) PNSBuildFrameBlock contentViewFrameBlock;
 
 #pragma mark- 竖屏、横屏模式设置
-/** 屏幕是否支持旋转方向，默认UIInterfaceOrientationMaskPortrait */
+/** 屏幕是否支持旋转方向，默认UIInterfaceOrientationMaskPortrait，注意：在刘海屏，UIInterfaceOrientationMaskPortraitUpsideDown属性慎用！ */
 @property (nonatomic, assign) UIInterfaceOrientationMask supportedInterfaceOrientations;
 
 #pragma mark- 仅弹窗模式属性
@@ -88,7 +87,7 @@ typedef CGRect(^PNSBuildFrameBlock)(CGSize screenSize, CGSize superViewSize, CGR
 @property (nonatomic, copy) PNSBuildFrameBlock navBackButtonFrameBlock;
 /** 构建导航栏标题的frame，view布局或布局发生变化时调用，不实现则按默认处理 */
 @property (nonatomic, copy) PNSBuildFrameBlock navTitleFrameBlock;
-/** 构建导航栏右侧more view的frame，view布局或布局发生变化时调用，不实现则按默认处理 */
+/** 构建导航栏右侧more view的frame，view布局或布局发生变化时调用，不实现则按默认处理，边界 CGRectGetMinX(frame) >= (superViewSizeViewSize / 0.3) && CGRectGetWidth(frame) <= (superViewSize.width / 3.0) */
 @property (nonatomic, copy) PNSBuildFrameBlock navMoreViewFrameBlock;
 
 #pragma mark- 全屏、弹窗模式共同属性

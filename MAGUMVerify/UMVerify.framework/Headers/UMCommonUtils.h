@@ -2,18 +2,12 @@
 //  UMCommonUtils.h
 //  UMVerify
 //
-//  Created by wangkai on 2019/10/12.
-//  Copyright © 2019 wangkai. All rights reserved.
+//  Copyright © 2019 umeng. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-typedef enum : NSInteger {
-    UM_Top_Request_Environment_Online,   // 0
-    UM_Top_Request_Environment_PreLine,
-    UM_Top_Request_Environment_Daily
-} UM_Top_Request_Environment;
 
 @interface UMCommonUtils : NSObject
 
@@ -96,10 +90,7 @@ typedef enum : NSInteger {
 + (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size isRoundedCorner:(BOOL )isRounded radius:(CGFloat)radius;
 
 
-/**
- SDK的服务端环境设置，注意：此接口只在Debug模式下生效
- */
-+ (void)setSDKServerEnvironment:(UM_Top_Request_Environment )env;
+
 
 
 

@@ -2,8 +2,7 @@
 //  UMPNSReturnCode.h
 //  UMVerify
 //
-//  Created by wangkai on 2019/11/6.
-//  Copyright © 2019 wangkai. All rights reserved.
+//  Copyright © 2019 umeng. All rights reserved.
 //
 
 #ifndef PNSReturnCode_h
@@ -42,6 +41,8 @@ static NSString * const PNSCodeInterfaceTimeout = @"600015";
 static NSString * const PNSCodeDecodeAppInfoFailed = @"600017";
 /// 运营商已切换
 static NSString * const PNSCodeCarrierChanged = @"600021";
+/// 终端环境检测失败（终端不支持认证 / 终端检测参数错误）
+static NSString * const PNSCodeEnvCheckFail = @"600025";
 
 #pragma mark - 授权页的点击事件回调码
 

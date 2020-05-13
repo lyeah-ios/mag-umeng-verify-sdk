@@ -2,14 +2,18 @@
 //  UMCommonHandler.h
 //  UMVerify
 //
-//  Created by wangkai on 2019/10/12.
-//  Copyright © 2019 wangkai. All rights reserved.
+//  Copyright © 2019 umeng. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 #import "UMCustomModel.h"
+
+typedef NS_ENUM(NSInteger, UMPNSAuthType) {
+    UMPNSAuthTypeVerifyToken = 1,  //本机号码校验
+    UMPNSAuthTypeLoginToken = 2    //一键登录
+};
 
 @interface UMCommonHandler : NSObject
 
@@ -26,11 +30,13 @@
  */
 + (void)setVerifySDKInfo:(NSString * _Nonnull)info complete:(void(^_Nullable)(NSDictionary * _Nonnull resultDic))complete;
 
+
 /**
- *  检查及准备调用环境，resultDic返回PNSCodeSuccess才能调用下面的功能接口，在初次或切换蜂窝网络之后需要重新调用，一般在一次登录认证流程开始前调一次即可
- *  @param  complete 异步结果回调，成功时resultDic=@{resultCode:600000, msg:...}，其他情况时"resultCode"值请参考PNSReturnCode，只有成功回调才能保障后续接口调用
+ *  检查当前环境是否支持一键登录或号码认证，resultDic 返回 PNSCodeSuccess 说明当前环境支持
+ *  @param  authType 服务类型 UMPNSAuthTypeVerifyToken 本机号码校验流程，UMPNSAuthTypeLoginToken 一键登录流程
+ *  @param  complete 同步结果回调，成功时resultDic=@{resultCode:600000, msg:...}，其他情况时"resultCode"值请参考PNSReturnCode，只有成功回调才能保障后续接口调用
  */
-+ (void)checkEnvAvailableWithComplete:(void (^_Nullable)(NSDictionary * _Nullable resultDic))complete;
++ (void)checkEnvAvailableWithAuthType:(UMPNSAuthType)authType complete:(void (^_Nullable)(NSDictionary * _Nullable resultDic))complete;
 
 /**
  *  获取本机号码校验Token
@@ -74,14 +80,16 @@
 + (void)cancelLoginVCAnimated:(BOOL)flag complete:(void (^_Nullable)(void))complete;
 
 /**
- *  设置日志上传开关
- *  @param  enable 开关设置BOOL值，默认为YES
- */
-+ (void)setUploadEnable:(BOOL)enable;
-
-
-/**
  *  获取智能认证ID
  */
 + (NSString *_Nonnull)getVerifyId;
+
+
+
+/**
+ *  检查及准备调用环境，resultDic返回PNSCodeSuccess才能调用下面的功能接口
+ *  @param  complete 异步结果回调到主线程，成功时resultDic=@{resultCode:600000, msg:...}，其他情况时"resultCode"值请参考PNSReturnCode，只有成功回调才能保障后续接口调用
+ */
++ (void)checkEnvAvailableWithComplete:(void (^_Nullable)(NSDictionary * _Nullable resultDic))complete DEPRECATED_MSG_ATTRIBUTE("Please use checkEnvAvailableWithAuthType:complete: instead");
+
 @end

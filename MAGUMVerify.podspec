@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MAGUMVerify'
-  s.version          = '1.2.0'
+  s.version          = '1.3.0'
   s.summary          = 'umeng-uverify-sdk.'
 
   s.homepage         = 'https://github.com/lyeah-ios/mag-umeng-verify-sdk.git'
