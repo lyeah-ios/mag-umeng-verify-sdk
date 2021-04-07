@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MAGUMVerify'
-  s.version          = '2.2.0'
+  s.version          = '2.3.0'
   s.summary          = 'umeng-uverify-sdk.'
 
   s.homepage         = 'https://github.com/lyeah-ios/mag-umeng-verify-sdk.git'
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
 
   s.resource = 'MAGUMVerify/*.bundle'
-  s.ios.vendored_frameworks = 'MAGUMVerify/UMVerify.framework'
+  s.ios.vendored_frameworks = 'MAGUMVerify/UMVerify.framework', 'MAGUMVerify/YTXMonitor.framework', 'MAGUMVerify/YTXOperators.framework'
 
   s.frameworks = 'SystemConfiguration', 'CoreTelephony'
   s.libraries = 'sqlite3', 'z'
